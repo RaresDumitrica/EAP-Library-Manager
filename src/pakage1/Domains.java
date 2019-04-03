@@ -7,15 +7,26 @@ public enum Domains {
         FIZICA(3),
         MECANICA(4);
 
-        private Integer privateValue;
+        private Integer value;
 
 
          Domains(Integer value){
-            this.privateValue = value;
+           this.value = value;
         }
 
-        public Integer getValue(){
-            return privateValue;
+
+         public static Domains fromValue(int value) throws IllegalArgumentException {
+                try {
+                    return Domains.values()[value];
+                } catch(ArrayIndexOutOfBoundsException e) {
+                throw new IllegalArgumentException("Unknown enum value :"+ value);
         }
+    }
+
+
+
+
+
+
 
 }

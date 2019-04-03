@@ -12,7 +12,7 @@ import static pakage1.Domains.MATEMATICA;
 public class Test1 {
     public  static  void main(String[] args) {
 // MariaDB Connection localhost, 3306;
-     /*  Connection connection = null;
+ /*   Connection connection = null;
         ArrayList<Client> clients = new ArrayList<Client>();
 
         try {
@@ -24,16 +24,16 @@ public class Test1 {
 
             int numberOfClients = 0;
             while(rs.next()) {
-                //System.out.println(rs.getInt("PersonID"));
-              //  Book newBook = new Book(rs.getString("titlu"), rs.getString("autor"), rs.getObject(3), rs.getInt("ID"));
-                //clients.add(newBook);
+                System.out.println(rs.getInt("PersonID"));
+                Book newBook = new Book(rs.getString("titlu"), rs.getString("autor"), rs.getObject(3), rs.getInt("ID"));
+                clients.add(newBook);
                 numberOfClients++;
             }
 
             for(Client o:clients){
 
-               // System.out.println("LastName: " + o.getLastName() + "\nFirstName: " + o.getFirstName() + "\nAge: " + o.getAge() + "\nCNP: " + o.getCNP());
-                //System.out.println("\n");
+                System.out.println("LastName: " + o.getLastName() + "\nFirstName: " + o.getFirstName() + "\nAge: " + o.getAge() + "\nCNP: " + o.getCNP());
+                System.out.println("\n");
                 o.print();
             }
 
@@ -45,16 +45,14 @@ public class Test1 {
         }
 
 
-*/
-
-     /*
-Book myBook = new Book("adsds","Dsds",INFORMATICA,12);
-        System.out.println(myBook.getDomain());
 
 
 */
-     Domains myDomain = new Domains(0);
-        System.out.println(myDomain.getValue());
+        int value = 1;
+        Domains myDomain = Domains.values()[value];
+
+
+        System.out.println(myDomain.fromValue(value));
 
 
     }
